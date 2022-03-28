@@ -1,10 +1,12 @@
 package br.com.gabriel.ruas.pw3hasfoodapi.entity;
 
+import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +17,15 @@ import lombok.Setter;
 
 public class Pedido {
 	@Id
+	@Column(name = "ID_PEDIDO")
 	private Long id;
-	private Data data;
+	
+	@Column(name = "DT_PEDIDO")
+	private LocalDate data;
+	
+	@Column(name = "TX_STATUS")
 	private String status;
-	private String restaurante;
+	
+	@Column(name = "ID_RESTAURANTE")
+	private Integer restaurante;
 }
